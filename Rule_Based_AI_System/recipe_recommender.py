@@ -10,7 +10,8 @@ recipes = {
     "Beef Burrito": ["tortilla", "ground beef", "cheese", "lettuce", "tomato"],
     "Turkey Sandwich": ["bread", "turkey", "cheese", "lettuce", "tomato"],
     "Chicken Pot Pie": ["pie crust", "chicken", "cream of mushroom soup", "carrots", "green beans"],
-    "Ramen": ["noodles", "broth", "vegetables", "hard boiled egg", "soy sauce"]
+    "Ramen": ["noodles", "broth", "vegetables", "hard boiled egg", "soy sauce"],
+    "Salsa": ["tomatoes", "garlic", "onion", "jalepenos", "cilantro"]
 }
 
 # Function to recommend recipes
