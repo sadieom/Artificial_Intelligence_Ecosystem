@@ -1,5 +1,5 @@
 import logging
-import transformers.logging as hf_logging
+from transformers import logging as transformers_logging
 import warnings
 from dotenv import load_dotenv
 import os
