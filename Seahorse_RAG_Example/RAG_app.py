@@ -1,7 +1,7 @@
 import logging
 from transformers import logging as transformers_logging
 import warnings
-from dotenv import load_dotenv
+from dotenv import load_dotenv  # Make sure this is imported
 import os
 import openai
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -9,14 +9,20 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 import faiss
 
+# Load environment variables from .env file
+load_dotenv()
+
 # Set log levels
-logging.getLogger("langchain.text_splitter").setLevel(logging.ERROR)
-hf_logging.set_verbosity_error()
+transformers_logging.get_logger("langchain.text_splitter").setLevel(logging.ERROR)
+transformers_logging.set_verbosity_error()
 warnings.filterwarnings("ignore")
 
-# Load environment variables and set OpenAI API key
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Retrieve OpenAI API key from environment
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("OpenAI API key not found. Make sure your .env file has OPENAI_API_KEY set.")
+
+openai.api_key = api_key
 
 # Read contents of Selected_Document.txt into text variable
 with open("Selected_Document.txt", "r", encoding="utf-8") as file:
@@ -24,7 +30,7 @@ with open("Selected_Document.txt", "r", encoding="utf-8") as file:
 
 # Define variables
 chunk_size = 500
-chunk_overlap = 50
+chunk_overlap = 100
 model_name = "sentence-transformers/all-distilroberta-v1"
 top_k = 5
 
@@ -67,7 +73,7 @@ def retrieve_chunks(question: str, k: int = top_k):
 # Function to answer a question based on retrieved context chunks
 def answer_question(question: str) -> str:
     """
-    Retrieves relevant chunks and uses OpenAI's ChatCompletion API to answer the question.
+    Retrieves relevant chunks and uses OpenAI's Chat Completions API to answer the question.
 
     Args:
         question (str): The input question string.
@@ -96,8 +102,8 @@ Question: {question}
 Answer:
 """
 
-    # Call OpenAI ChatCompletion with the prompts and parameters
-    resp = openai.ChatCompletion.create(
+    # Call OpenAI Chat Completions with the prompts and parameters
+    resp = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": system_prompt},
