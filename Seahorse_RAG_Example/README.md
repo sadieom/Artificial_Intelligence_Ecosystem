@@ -44,45 +44,36 @@ The system uses dense vector embeddings produced by transformer-based embedding 
 
 ## 3 Questions and Answer Quality
 
-Your question: What is a group of seahorses called?
-
-Answer: A group of seahorses is not specifically mentioned in the provided context.
-
-
-Your question: Does a seahorse have gills?
-
-Answer: Yes, a seahorse has gills.
+**Your question:** What is a group of seahorses called?
+**Answer:** A group of seahorses is not specifically mentioned in the provided context.
 
 
-Your question: How many species of seahorses are there?
+**Your question:** Does a seahorse have gills?
+**Answer:** Yes, a seahorse has gills.
 
-Answer: There are several species of seahorses mentioned in the provided context, including H. kellogii, H. histrix, H. kuda, 
-H. trimaculatus, H. mohnikei, Hippocampus erectus, and H. zosterae. However, the exact number of seahorse species is not explicitly stated in the context.
+
+**Your question:** How many species of seahorses are there?
+**Answer:** There are several species of seahorses mentioned in the provided context, including H. kellogii, H. histrix, H. kuda, H. trimaculatus, H. mohnikei, Hippocampus erectus, and H. zosterae. However, the exact number of seahorse species is not explicitly stated in the context.
 
 The quality of the answers wasn't great because the Wikipedia article wasn't as detailed as some of them are; however, the model was good at saying when the context didn't supply the answer rather than halucinating.
 
 To test what happens when I change the chunk size and overlap size, I asked the RAG model to "Tell me about seahorse courtship", which is something I know the Wikipedia article had a section on.
 
-Chunk size = 1000
+**Chunk size = 1000**
+**Overlap = 500**
 
-Overlap = 500
+**Answer:** Seahorses exhibit four phases of courtship that involve clear behavioral changes and changes in the intensity of the courtship act. Phase 1 is the initial courtship phase that occurs one or two days before physical copulation, where potential mates brighten in color, quiver, and display rapid side-to-side body vibrations. Phase 2 involves the female pointing behavior, followed by the male responding with the same behavior. In Phase 3, both males and females brighten and assume the pointing position, with the male eventually departing. The final phase includes multiple bouts of courtship where the male and female rise together in a water column, culminating in mid-water copulation where the female transfers her eggs into the male's brood pouch. Courtship behavior in seahorses can last for several days and involves synchronized movements and reproductive states to ensure successful egg transfer.
 
-Answer: Seahorses exhibit four phases of courtship that involve clear behavioral changes and changes in the intensity of the courtship act. Phase 1 is the initial courtship phase that occurs one or two days before physical copulation, where potential mates brighten in color, quiver, and display rapid side-to-side body vibrations. Phase 2 involves the female pointing behavior, followed by the male responding with the same behavior. In Phase 3, both males and females brighten and assume the pointing position, with the male eventually departing. The final phase includes multiple bouts of courtship where the male and female rise together in a water column, culminating in mid-water copulation where the female transfers her eggs into the male's brood pouch. Courtship behavior in seahorses can last for several days and involves synchronized movements and reproductive states to ensure successful egg transfer.
+**Chunk size = 500**
+**Chunk overlap = 100**
 
-Chunk size = 500
-
-Chunk overlap = 100
-
-Seahorse courtship involves four phases that include behavioral changes and changes in the intensity of courtship acts. The courtship behavior includes brightening in color, quivering, rapid side-to-side body vibrations, swimming side by side holding tails, gripping the same strand of sea grass with their tails, and engaging in synchronized movements like the "predawn dance" and "true courtship dance." The final phase of courtship includes bouts of courtship where the male and female rise together in the water column, with the female eventually transferring her eggs to the male. Male seahorses are more aggressive during courtship, engaging in behaviors like tail-wrestling and head snapping to compete for female attention.
+**Answer:** Seahorse courtship involves four phases that include behavioral changes and changes in the intensity of courtship acts. The courtship behavior includes brightening in color, quivering, rapid side-to-side body vibrations, swimming side by side holding tails, gripping the same strand of sea grass with their tails, and engaging in synchronized movements like the "predawn dance" and "true courtship dance." The final phase of courtship includes bouts of courtship where the male and female rise together in the water column, with the female eventually transferring her eggs to the male. Male seahorses are more aggressive during courtship, engaging in behaviors like tail-wrestling and head snapping to compete for female attention.
 
 
+**Chunk size = 100**
+**Chunk overlap = 50**
 
-Chunk size = 100
-
-Chunk overlap = 50
-
-Answer: Seahorse courtship involves four phases with clear behavioral changes, where displays are performed alternately by both the male and the female seahorse. Before breeding, seahorses may court for several days. The seahorses display no courtship 
-behavior, and females are not bright; males will usually display.
+**Answer:** Seahorse courtship involves four phases with clear behavioral changes, where displays are performed alternately by both the male and the female seahorse. Before breeding, seahorses may court for several days. The seahorses display no courtship behavior, and females are not bright; males will usually display.
 
 
 In general, it seems like the shorter the chunk size and the less the chunk overlap, the less detailed the answer is.
