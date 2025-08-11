@@ -11,7 +11,8 @@ recipes = {
     "Turkey Sandwich": ["bread", "turkey", "cheese", "lettuce", "tomato"],
     "Chicken Pot Pie": ["pie crust", "chicken", "cream of mushroom soup", "carrots", "green beans"],
     "Ramen": ["noodles", "broth", "vegetables", "hard boiled egg", "soy sauce"],
-    "Salsa": ["tomatoes", "garlic", "onion", "jalepenos", "cilantro"]
+    "Salsa": ["tomatoes", "garlic", "onion", "jalepenos", "cilantro"],
+    "Chef's Salad": ["lettuce","tomatoes", "ham", "turkey", "hard boiled egg", "salad dressing"]
 }
 
 # Function to recommend recipes
