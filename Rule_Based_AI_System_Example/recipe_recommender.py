@@ -12,7 +12,8 @@ recipes = {
     "Chicken Pot Pie": ["pie crust", "chicken", "cream of mushroom soup", "carrots", "green beans"],
     "Ramen": ["noodles", "broth", "vegetables", "hard boiled egg", "soy sauce"],
     "Salsa": ["tomatoes", "garlic", "onion", "jalepenos", "cilantro"],
-    "Chef's Salad": ["lettuce","tomatoes", "ham", "turkey", "hard boiled egg", "salad dressing"]
+    "Chef's Salad": ["lettuce","tomatoes", "ham", "turkey", "hard boiled egg", "salad dressing"],
+    "Grilled Cheese Sandiwich": ['bread', 'cheese', 'mayonaise', 'pickles']
 }
 
 # Function to recommend recipes
