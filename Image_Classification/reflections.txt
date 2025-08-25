@@ -1,0 +1,27 @@
+Run the Basic Classifier
+Use the provided base_classifier.py to classify your chosen image.
+
+Prompt the AI to explain each line of the code:
+
+“Explain what each line of this Python program does.”
+
+Reflect on the explanation:
+
+I used chatGPT to explain each line to me in the base_classifier.py file and I 
+feel the explaination was fairly easy to understand. The program we are using currently 
+uses a pre-trained MobileNetV2 model from TensorFlow to classify images. It imports teh libraries 
+it needs like TensorFlow, Keras tools for image preprocessing, and NumPy for array handling. With the 
+model already loaded with ImageNet "weights" so it already knows how to recognize a wide variety of 
+objects.
+
+Top-3 Predictions for dog.jpg
+  1: kelpie (0.40)
+  2: German_short-haired_pointer (0.28)
+  3: llama (0.04)
+
+
+Grad_CAM Observations:
+
+With my Grad_CAM I am not exactly sure why but it didn't seem to "focus" on one area. My observation of the image
+with the Grad_CAM is that it knows it is a dog for the most part (the predictions prove that it is about 65% sure it
+is a dog). It focuses on the legs mostly for some reason, and then loses focus or interst in the head area of the dog. 
