@@ -5,7 +5,7 @@ Prompt the AI to explain each line of the code:
 
 “Explain what each line of this Python program does.”
 
-Reflect on the explanation:
+Reflect Base Classifier Explanation:
 
 I used chatGPT to explain each line to me in the base_classifier.py file and I 
 feel the explaination was fairly easy to understand. The program we are using currently 
@@ -25,3 +25,8 @@ Grad_CAM Observations:
 With my Grad_CAM I am not exactly sure why but it didn't seem to "focus" on one area. My observation of the image
 with the Grad_CAM is that it knows it is a dog for the most part (the predictions prove that it is about 65% sure it
 is a dog). It focuses on the legs mostly for some reason, and then loses focus or interst in the head area of the dog. 
+
+Basic Filter Explanation:
+
+Everything the Ai said for each line makes sense, this program asks the user for an image file, resizes it to 128×128, applies a 
+Gaussian blur, and saves a new blurred version with _blurred added to its filename, while gracefully handling errors.
